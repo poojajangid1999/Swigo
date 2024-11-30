@@ -1,0 +1,71 @@
+.map-iframe{
+	iframe{
+		width: 100%;
+	}
+	&.style-1{
+		iframe{
+			height:400px;
+			margin-bottom:-10px;
+			@include respond('tab-port'){
+				height:350px;			
+			}
+			@include respond('phone'){
+				height:300px;
+			}
+		}
+	}
+}
+
+.contact-box {
+	padding-right: 100px;
+	margin-bottom: 70px;
+	
+	@include respond('phone'){
+		padding-right: 0;
+		margin-bottom: 30px;
+	}
+}
+.widget_working {
+	padding: 30px;
+	background: rgba(255 ,255 ,255 ,0.1);
+	border-radius: 10px;
+	margin-bottom: 0;
+
+	ul{
+		width: 100%;
+		display: table;
+		li {
+			width: 50%;
+			color: #fff;
+			display: inline-block;
+			vertical-align: top;
+			span{
+				display:block;
+			}
+		}
+	}
+	@include respond('tab-port'){
+		margin-bottom: 30px !important;
+	}
+	@include respond('phone'){
+		padding: 15px;
+	}
+	&.bg-primary {
+		ul{
+			li{
+				color:#222222;
+				font-weight: 400;
+				font-size: 16px;
+				span{
+					font-size:16px;
+				}
+			}
+		}
+	}
+}
+.contact-area{
+	padding-left: 30px;
+	@include respond('tab-port'){
+		padding-left: 0;
+	}
+}

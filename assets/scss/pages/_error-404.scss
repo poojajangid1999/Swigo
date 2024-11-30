@@ -1,0 +1,63 @@
+// Error Page
+.error-page{
+	position:relative;
+	height: 100vh;
+    display: flex;
+    align-items: center;
+    min-height: 700px;
+	background: linear-gradient(180deg, rgba(255, 193, 180, 0) 0%, rgba(255, 193, 180, 0.7) 100%);
+	
+	.inner-content{
+    	padding-top: 150px;
+		position: relative;
+		z-index: 9;
+    }
+	.error-head{
+		font-size: 32px;
+		font-weight: 500;
+		margin: -35px auto 40px;
+		max-width: 600px;
+	}
+	
+	@include respond('laptop'){
+		min-height:  650px;
+		.error-head{
+			font-size: 24px;
+		    margin-top: -30px;
+		    margin-bottom: 30px;
+	        max-width: 540px;
+			line-height: 1.4;
+		}
+	}
+	@include respond('tab-port'){
+		min-height:  500px;
+		.inner-content {
+	    	padding-top: 100px;
+	    }
+	}
+	@include respond('phone-land'){
+		.error-head{
+			font-size: 20px;
+		    margin-top: -20px;
+		    max-width: 440px;
+		}
+	}
+	@include respond('phone'){
+		min-height:  450px;
+		.error-head{
+			font-size: 18px;
+			 margin-top: -5px;
+			 margin-bottom: 20px;
+		}
+	}
+}
+.error-image{
+	width: 500px; 
+	margin:auto;
+	@media only screen and (max-width: 600px) {
+		width:400px;
+	}
+	@include respond('phone'){
+		width:250px;
+	}
+}

@@ -1,0 +1,40 @@
+//Blog styles
+.dz-card{
+	&.style-1{
+		position:relative;
+		border-radius:10px;
+		box-shadow: 0px 15px 55px rgba(34, 34, 34, 0.15);
+		overflow:hidden;
+		background-color:#fff;
+		&.blog-half{
+			.dz-media {
+				min-width: 240px;
+				width:240px;
+			}
+			.dz-info{
+				.dz-meta{
+					ul{
+						li{
+							font-weight:500;
+						}
+					}
+				}
+				p{
+					font-size: 14px;
+					line-height: 22px;
+				}
+			}
+			@include respond('phone-land'){
+				.dz-info{
+					padding:20px;
+				}
+			}
+			@include respond('phone'){
+				.dz-media {
+					min-width: 100%;
+					width:100%;
+				}
+			}
+		}
+	}
+}

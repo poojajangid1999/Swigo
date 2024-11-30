@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "flaticon_mycollection";
+    src: url("./flaticon_mycollection.ttf?53554a43c9c8550769b8710dcb6a0cc8") format("truetype"),
+url("./flaticon_mycollection.woff?53554a43c9c8550769b8710dcb6a0cc8") format("woff"),
+url("./flaticon_mycollection.woff2?53554a43c9c8550769b8710dcb6a0cc8") format("woff2"),
+url("./flaticon_mycollection.eot?53554a43c9c8550769b8710dcb6a0cc8#iefix") format("embedded-opentype"),
+url("./flaticon_mycollection.svg?53554a43c9c8550769b8710dcb6a0cc8#flaticon_mycollection") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_mycollection !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-home:before {
+    content: "\f101";
+}
+.flaticon-brickwall:before {
+    content: "\f102";
+}
+.flaticon-furnitures:before {
+    content: "\f103";
+}
+.flaticon-project-plan:before {
+    content: "\f104";
+}
+.flaticon-design:before {
+    content: "\f105";
+}
+.flaticon-pin:before {
+    content: "\f106";
+}
+.flaticon-telephone:before {
+    content: "\f107";
+}
+.flaticon-inbox:before {
+    content: "\f108";
+}
+.flaticon-settings:before {
+    content: "\f109";
+}

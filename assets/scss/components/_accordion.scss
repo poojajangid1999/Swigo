@@ -1,0 +1,146 @@
+// dz-accordion
+.dz-accordion{
+	.accordion-item{
+		background: #fff;
+		margin-bottom: 20px;
+		border: 0;
+	}
+	.accordion-body{
+		padding: 25px 30px;
+		border-radius: 0;
+		border: 1px solid #3b6ff5;
+		border-top:0;
+		margin-top: -9px;
+		border-radius: 0 0px 10px 10px;
+		@include transitionMedium;
+		@include respond('phone'){
+			padding: 15px;
+		}
+	}
+	.accordion-collapse{
+		border: 0;
+		border: 0;
+	    border-radius: 0 !important;
+	}
+	.accordion-header{
+		background-color:rgba(255, 191 ,179 ,0.5);
+		border-radius: 10px;
+		
+		.accordion-button{
+			font-size: 18px;
+			border: 0;
+			font-weight: 500;
+			padding: 20px;
+			@include transitionMedium;
+			color: black;
+		
+			&:after{
+				content: none;
+			}
+			.toggle-close{
+				background-color: transparent;
+				height: 55px;
+				width: 55px;
+				display: flex;
+				align-items:center;
+				justify-content: center;
+				position: absolute;
+				right: 5px;
+				line-height: 55px;
+				text-align: center;
+				font-size: 24px;
+				@include transitionMedium;
+				z-index:1;
+				overflow:hidden;
+				
+				&:before{
+					content: "\f105";
+					color: var(--secondary);
+					font-size: 24px;
+					font-family: 'Line Awesome Free';
+					z-index: 99;
+					opacity: 1;
+					transition: all 0.5s;
+					line-height: 55px;
+					display:block;
+					font-weight:900;
+				}
+			}
+			
+			&.collapsed{
+				background: transparent;
+				color: inherit;
+				&:after{
+					opacity:0;
+				}
+				.toggle-close{
+					content: "";
+					&:after{
+						opacity:1;
+					}
+					&:before{
+						opacity: 1;
+					}
+				}
+				
+			}
+			&:not(.collapsed) {
+				background-color:var(--secondary);
+				color:#fff;
+				border-radius: 10px 10px 0px 0px;
+				.toggle-close{
+					&:before{
+						color: #fff;
+						transform: rotate(90deg);
+					}
+				}
+			}
+		}
+		@media only screen and (max-width: 768px){
+			.accordion-button{
+				font-size:17px;
+			}
+			
+		}
+		@include respond('phone'){
+			.accordion-button{
+				padding: 15px 65px 15px 15px;
+				font-size:14px;
+			}
+		}
+	}
+	&.accordion-md{
+		.accordion-body {
+			padding: 25px;
+			@include respond('phone'){
+				padding: 15px;
+			}
+		}
+		.accordion-header{
+			.accordion-button{
+				padding: 18px 60px 18px 25px;
+				.toggle-close{
+					height: 100%;
+					width: 60px;
+					&:before{
+						font-size: 25px;
+						line-height: 60px;
+						@include respond('phone'){
+							font-size: 23px;
+						}
+					}
+					@include respond('phone-land'){
+						width:50px;
+					}
+				}
+			}
+			@include respond('phone'){
+				.accordion-button{
+					padding: 15px 55px 15px 15px;
+				}
+			}
+		}
+	}
+	
+}
+

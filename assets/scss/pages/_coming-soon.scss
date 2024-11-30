@@ -1,0 +1,377 @@
+.coming-wrapper{
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(255, 193, 180, 0) 50.58%, rgba(255, 193, 180, 0.7) 100%);
+	overflow: hidden;
+	min-height: 100vh;
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+	
+	@include respond('phone-land'){
+		height: auto;
+	}
+	&:after{
+		content: "";
+		position: absolute;
+		z-index: -1;
+		bottom: 28%;
+		left: 0;
+		background-image: url(../images/pattern/cloud.svg);
+		width: 100%;
+		height: 175px;
+		background-repeat: repeat-x;
+	}
+	.bg-image{
+		margin-bottom: -1px;
+		position: absolute;
+		bottom: 100%;
+		z-index: 12;
+		left: 0;
+		width: 100%;
+	}
+	
+	
+	.inner-content{
+		padding: 50px;
+		width: 100%;
+		min-height:750px;
+		
+		@include respond('tab-port'){
+			padding: 30px;
+			min-height:650px;
+		}
+		
+		.middle-area{
+			margin-top: 120px;
+			margin-bottom: 120px;
+			
+			@include respond('phone-land'){
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}	
+	
+			.left-txt{
+				font-size:35px;
+				font-weight: 500;
+				line-height: 1.4;
+				color:#222222;
+				font-family: 'Poppins';
+				margin-bottom:30px;
+				position: relative;
+				z-index: 99;
+				@media only screen and (max-width: 1024px){
+					font-size:30px;
+				}
+				@media only screen and (max-width: 768px){
+					font-size:24px;
+				}
+				@include respond('phone'){
+					font-size:20px;
+					margin-bottom: 15px;
+				}
+			}
+			.countdown-row {
+				position: relative;
+				z-index:12;
+				.coming-logo{
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 165px;
+				}
+				.countdown {
+					display: flex;
+					vertical-align: middle;
+					position: relative;
+					z-index:12;
+					&:after, &:before{
+						content:"";
+						position:absolute;
+						background: linear-gradient(179.37deg, #FFFFFF 0.54%, rgba(255, 255, 255, 0) 93.79%);
+						opacity: 0.8;
+						z-index:-1;
+						width: 192px;
+						height: 234px;
+						border-radius:4px;
+					}
+					&:before{
+						top: 78px;
+						right: 120px;
+						@include respond('wide-desktop'){
+							top: 70px;
+							right: 80px;
+						}
+						@include respond('laptop'){
+							right: 14px;
+						}
+						@media only screen and (max-width: 1420px){
+							right:-25px;
+						}
+						@media only screen and (max-width: 1320px){
+							right:-65px;
+						}
+						@include respond('tab-land'){
+							top: 56px;
+						}
+						@media only screen and (max-width: 1024px){
+							right: -95px;
+						}
+						@include respond('tab-port'){
+							top: 45px;
+						}
+						@media only screen and (max-width: 600px){
+							display:none;
+						}
+					}
+					&:after{
+						top: -230px;
+						right: 90px;
+						opacity: 0.8;
+						transform: matrix(1, 0, 0, -1, 0, 0);
+						@include respond('wide-desktop'){
+							right: 75px;
+						}
+						@include respond('laptop'){
+							right: 0px;
+						}
+						@media only screen and (max-width: 1320px){
+							right:-40px;
+						}
+						@media only screen and (max-width: 1024px){
+							right: -49px;
+							top: -233px;
+						}
+						@media only screen and (max-width: 600px){
+							display:none;
+						}
+					}
+					.date {
+						display:grid;
+						margin-right: 125px;
+						
+						&:last-child {
+							margin-right: 0;
+						}
+						.time {
+							font-size: 72px;
+							vertical-align: middle;
+							color: #2f2f2f;
+							font-weight: 600;
+							width: 83px;
+							height: 84px;
+							line-height: 84px;
+							&.lost{
+								opacity:0;
+							}
+							@include respond('wide-desktop'){
+								width: 80px;
+							}
+							@include respond('phone'){
+								width: 60px;
+							}
+							@include respond('phone'){
+								&.lost{
+									opacity:1;
+								}
+							}
+						}
+						.text {
+							font-size: 18px;
+							font-weight: 500;
+							line-height:27px;
+							font-family: 'Poppins';
+							color: #939393;;
+							text-transform: uppercase;
+							margin-left: 5px;
+						}
+						
+						@include respond('wide-desktop'){
+							margin-right: 100px;
+							.time {
+								font-size: 60px;
+							}
+						}
+						@media only screen and (max-width: 1320px){
+							margin-right: 100px;
+						}
+						@include respond('tab-land'){
+							margin-right: 90px;
+							.time {
+								line-height: 55px;
+								height: 55px;
+							}
+							.text {
+								font-size: 16px;
+							}
+						}
+						@media only screen and (max-width: 1024px){
+							margin-right:65px;
+							
+						}
+						@include respond('tab-port'){
+							margin-right: 65px;
+							.time {
+								font-size: 53px;
+								line-height: 45px;
+								height: 45px;
+							}
+							.text {
+								font-size: 15px;
+							}
+						}
+						@media only screen and (max-width: 768px){
+							margin-right:28px;
+							.time {
+								font-size: 45px;
+							}
+						}
+						@include respond('phone'){
+							margin-right: 25px;
+							.text {
+								font-size: 12px;
+								margin-left: 0;
+							}
+						}
+					}
+				}
+				.seconds-holder {
+					position: absolute;
+					transform-origin: center center;
+					top: 0;
+					pointer-events: none;
+					height: 1470px;
+					width: 1470px;
+					border-radius: 50%;
+					transform: translate(-51.5%, -46.5%);
+					
+					@include respond('wide-desktop'){
+						height: 1280px;
+						width: 1280px;
+					}
+					@include respond('tab-land'){
+						left: -38px;
+						top:-14px;
+					}
+					@media only screen and (max-width: 1024px){
+						left: -116px;
+					}
+					@include respond('tab-port'){
+						left: -74px;
+						top: -13px;
+						height: 1200px;
+						width: 1200px;
+					}
+					@media only screen and (max-width: 768px){
+						left: -96px;
+						top: -4px;
+						height: 1000px;
+						width: 1000px;
+					}
+					@media only screen and (max-width: 600px){
+						left: -98px;
+					}
+					@include respond('phone'){
+						display: none;
+					}
+					
+					&:before {
+						background-image: url(../images/circle.svg);
+						background-repeat: no-repeat;
+						background-size: cover;
+						border-radius: 50%;
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						transform: rotate(216deg);
+					}
+					.circle-holder {
+						position: relative;
+						width: inherit;
+						height: inherit;
+						clip-path: inset(0 0 0 35%);
+						overflow: hidden;
+						 
+						.digits {
+							position: absolute;
+							top: 0;
+							left: 0;
+							z-index: 111;
+							width: inherit;
+							height: inherit;
+							clip-path: inset(47.2% 4px 47.8% 93.6%);
+							overflow: hidden;
+							transition: all 0.3s;
+							.round {
+								width: inherit;
+								transition: all 0.3s;
+								margin-top: 0px;
+							}
+						}
+						.dz_down_circle {
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: inherit;
+							height: inherit;
+							img{
+								transition: all 0.3s;
+							}
+							@include respond('phone-land'){
+								display: none;
+							}
+						}
+					}
+				}
+				
+			}
+			
+		}
+	}
+	.coming-soon-footer{
+		position: relative;
+		z-index: 13;
+		bottom:0;
+		margin-top: auto;
+		background-color: #151f37;
+		padding-bottom: 30px;
+		
+		.container-fluid{
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+		.copyright-text{
+			color: rgba(255, 255, 255, 0.5);
+		}
+		@include respond('tab-port'){
+			text-align: center;
+			padding-top: 30px;
+			
+			.container-fluid{
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+			.row{
+				flex-direction: column-reverse;
+			}
+			.copyright-text{
+			    margin-top: 15px;
+				display: block;
+			}
+		}
+		@include respond('phone'){
+			.container-fluid{
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+	}
+	.coming{
+		height:600px;
+		@include respond('tab-land'){
+			height:500px;
+		}
+		@include respond('phone-land'){
+			height:320px;
+		}
+	}
+}

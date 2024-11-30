@@ -1,0 +1,262 @@
+.swiper-pagination {
+	position:relative;
+	width: auto;
+	display: flex;
+	align-items: center;
+	
+	&.style-1 {
+		display: inline-block;
+		margin-top:20px;
+		.swiper-pagination-bullet {
+			width: 8px;
+			height: 8px;
+			text-align: center;
+			font-size: 12px;
+			opacity: 1;
+			border-radius:30px;
+			background: grey;
+		}
+
+		.swiper-pagination-bullet-active {
+			background: var(--secondary);
+			width: 38px;
+		}
+	}
+}
+.num-pagination {
+    display: flex;
+    align-items: center;
+}
+
+.btn-next, 
+.btn-prev{
+	position: static;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 0px;
+    color: #fff;
+    background: var(--primary);
+    font-size: 15px;
+    z-index: 1;
+    text-align: center;
+    margin: 0 10px;
+	display: inline-block;
+	box-shadow: 0px 10px 30px 0px var(--rgba-primary-3);
+	@include transitionMedium;
+	border-radius:10px;
+	&:hover{
+		background:$dark;
+		color:#fff;
+		box-shadow: 0px 10px 30px 0px rgba(34, 34, 34, 0.2);
+	}
+	&:after{
+		content:none;	
+	}
+	&.dark {
+		&:hover{
+			background:#fff;
+			color:#000;
+			box-shadow: 0px 10px 30px 0px rgba(34, 34, 34, 0.2);
+		}
+	}
+	i{
+		font-size: 20px;
+		line-height: inherit;
+	}
+	@include custommq($max: 1199px) {
+		width: 35px;
+		height: 35px;
+		line-height: 35px;
+		i{
+			font-size: 16px;
+		}
+	}
+	@include respond('phone'){
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		i{
+			font-size: 15px;
+		}
+	}
+}
+.swiper-visible{
+	.swiper-slide{
+		opacity:0;
+		@include transitionMedium;
+		&.swiper-slide-visible{
+			opacity:1;
+		}
+	}
+}
+
+
+
+
+.btn-prev-long,
+.btn-next-long{
+	z-index:99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	font-size:18px;
+	i{
+		color:#fff;
+		font-size:16px;
+	}
+	&:before,&:after{
+		content:"";
+		position:absolute;
+		z-index:-1;
+	}
+	&:before{
+		width:30px;
+		border-radius:50px;
+		height:30px;
+		line-height:30px;
+		background-color:var(--primary);
+	}
+	&:after{
+		width:40px;
+		height:2px;
+		background-color:#000;
+	}
+	@include respond('tab-land'){
+		&:before{
+			width:25px;
+			height:25px;
+			line-height:25px;	
+		}
+		&:after{
+			width:25px;
+			height:2px;
+		}
+	}
+}
+.btn-prev-long{
+	&:before{
+		left:-14px;	
+	}
+	&:after{
+		left: 10px;
+		z-index: -2;
+	}
+	@include respond('tab-land'){
+		&:before{
+			left:-8px;	
+		}
+	}
+}
+.btn-next-long{
+	&:before{
+		right:-14px;	
+		left:auto;
+	}
+	&:after{
+		right: 10px;
+		left:auto;
+		z-index: -2;
+	}
+	@include respond('tab-land'){
+		&:before{
+			right:-8px;
+		}
+	}
+}
+.swiper-btn-lr{
+	position:relative;
+	.btn-prev-long,
+	.btn-next-long,.btn-prev,.btn-next{
+		top: 50%;
+		position:absolute;
+		transform: translateY(-50%);
+		right:-100px;
+		
+	}
+	.btn-prev-long,.btn-prev{
+		left:-100px;
+		right:auto;
+	}
+	@include respond('laptop'){
+		.btn-prev-long{
+			left:-60px;
+		}
+		.btn-next-long{
+			right:-60px;
+		}
+	}
+	@include respond('tab-land'){
+		.btn-prev-long{
+			left:-45px;
+		}
+		.btn-next-long{
+			right:-45px;
+		}
+	}
+	@media only screen and (max-width: 1200px) {
+		.btn-prev-long{
+			left:0px;
+		}
+		.btn-next-long{
+			right:0px;
+		}
+	}
+	@media only screen and (max-width: 1024px) {
+		.btn-prev-long{
+			left:-36px;
+		}
+		.btn-next-long{
+			right:-36px;
+		}
+	}
+	@include respond('tab-port'){
+		.btn-prev-long{
+			left:-23px;
+		}
+		.btn-next-long{
+			right:-23px;
+		}
+	}
+	@include respond('phone-land'){
+		.btn-prev-long{
+			left:-35px;
+		}
+		.btn-next-long{
+			right:-35px;
+		}
+	}
+	@include respond('phone'){
+		.btn-prev-long{
+			left:100px;
+		}
+		.btn-next-long{
+			right:100px;
+		}
+		.btn-prev-long,
+		.btn-next-long{
+			top: auto;
+			bottom:0;
+			transform: translateX(0);
+			
+		}
+	}
+	.btn-prev-1,.btn-next-1{
+		top: 50%;
+		position:absolute;
+		transform: translateY(-50%);
+		right:0;
+		background-color:rgba(34, 34, 34,0.1);
+		border-radius: var(--border-radius-base);
+		height: 80px;
+		width:27px;
+		line-height:80px;
+		text-align:center;
+		color:#222222;
+		font-size:14px;
+	}
+	.btn-prev-1{
+		left:0;
+		right:auto;
+	}
+}
